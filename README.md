@@ -82,6 +82,7 @@ The application performs:
 
 **Dataset:** PaySim Mobile Money Transaction Dataset
 
+
 | Item | Value |
 |------|-------|
 | Total Transactions | 6,362,620 |
@@ -91,11 +92,14 @@ The application performs:
 | Target Variable | `isFraud` |
 | Problem Type | Binary Classification |
 
+You can download it from Kaggle:
+🔗 https://www.kaggle.com/datasets/ealaxi/paysim1
+
 ---
 
 # 🤖 Machine Learning Model
 
-The training notebook ([`frauddetection.ipynb`](frauddetection.ipynb)) compares multiple algorithms, both as-is and with `class_weight="balanced"` to handle the extreme class imbalance.
+The training notebook ([`Financial_Fraud_Detection_System.ipynb`](Financial_Fraud_Detection_System.ipynb)) compares multiple algorithms, both as-is and with `class_weight="balanced"` to handle the extreme class imbalance.
 
 ### Models Evaluated
 
