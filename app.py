@@ -282,5 +282,5 @@ st.markdown(bars_html + "</div>", unsafe_allow_html=True)
 
 st.caption(
     "AI-Powered Financial Fraud Detection System · Balanced Random Forest · "
-    "Built with Streamlit · Phase 14 of the project roadmap"
+    "Built with Streamlit"
 )
