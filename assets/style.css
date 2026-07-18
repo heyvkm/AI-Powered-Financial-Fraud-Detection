@@ -1,0 +1,133 @@
+/* Native Streamlit chrome, retargeted to follow the in-app toggle (not OS preference) */
+.stApp { background-color: var(--page-bg); }
+[data-testid="stHeader"] { background-color: transparent; }
+.stMarkdown, .stMarkdown p, label, .stCaption { color: var(--text-primary) !important; }
+
+[data-testid="stForm"] {
+    background-color: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+.stNumberInput input, .stSelectbox div[data-baseweb="select"] > div, .stTextInput input {
+    background-color: var(--input-bg) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+}
+[data-testid="stExpander"] {
+    background-color: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+[data-testid="stTable"] table { color: var(--text-primary) !important; }
+[data-testid="stTable"] th { background-color: var(--surface-2) !important; color: var(--text-secondary) !important; }
+[data-testid="stTable"] td { background-color: var(--surface-1) !important; border-color: var(--gridline) !important; }
+
+/* Popover: BaseWeb wraps the content in its own auto-generated (hash-named,
+   version-unstable) div carrying a hardcoded white background. Rather than
+   chase that class name, force every descendant transparent and let only
+   the outer, stable-testid container carry the actual theme color. */
+[data-testid="stPopoverBody"] {
+    background-color: var(--surface-2) !important;
+    color: var(--text-primary) !important;
+}
+[data-testid="stPopoverBody"] * {
+    background-color: transparent !important;
+}
+[data-testid="stPopoverBody"] .stMarkdown,
+[data-testid="stPopoverBody"] .stMarkdown p,
+[data-testid="stPopoverBody"] h1,
+[data-testid="stPopoverBody"] h2,
+[data-testid="stPopoverBody"] h3 {
+    color: var(--text-primary) !important;
+}
+[data-testid="stPopoverBody"] a {
+    color: var(--series-1) !important;
+}
+
+.hero-banner {
+    background: linear-gradient(135deg, #2a78d6 0%, #1c5cab 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+.hero-banner h1 { margin: 0; font-size: 1.6rem; font-weight: 700; }
+.hero-banner p { margin: 6px 0 0 0; opacity: 0.9; font-size: 0.95rem; }
+
+.card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+}
+.card h3 {
+    margin: 0 0 14px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.verdict-card {
+    border-radius: 14px;
+    padding: 24px 26px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+}
+.verdict-card.legit  { background: color-mix(in srgb, var(--good) 12%, var(--surface-1)); }
+.verdict-card.fraud  { background: color-mix(in srgb, var(--critical) 12%, var(--surface-1)); }
+.verdict-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+.verdict-value {
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.verdict-value.legit { color: var(--good); }
+.verdict-value.fraud { color: var(--critical); }
+.verdict-sub { color: var(--text-secondary); font-size: 0.9rem; margin-top: 6px; }
+
+.meter-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.meter-label { font-size: 0.85rem; color: var(--text-secondary); }
+.meter-value { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+.meter-track {
+    height: 14px;
+    border-radius: 7px;
+    background: var(--gridline);
+    overflow: hidden;
+}
+.meter-fill { height: 100%; border-radius: 7px; }
+
+.risk-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gridline);
+    font-size: 0.88rem;
+}
+.risk-row:last-child { border-bottom: none; }
+.risk-icon { font-size: 1.05rem; line-height: 1.3; }
+.risk-text { color: var(--text-primary); }
+.risk-text b { color: var(--text-primary); }
+
+.imp-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.imp-label { width: 170px; font-size: 0.82rem; color: var(--text-secondary); flex-shrink: 0; }
+.imp-track { flex: 1; height: 10px; border-radius: 4px; background: var(--gridline); overflow: hidden; }
+.imp-fill { height: 100%; border-radius: 4px; background: var(--series-1); }
+.imp-value { width: 46px; text-align: right; font-size: 0.8rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+}
+.empty-state .big { font-size: 2.4rem; margin-bottom: 10px; }

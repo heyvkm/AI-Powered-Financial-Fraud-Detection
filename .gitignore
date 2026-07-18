@@ -1,0 +1,22 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large training data — do not commit, download separately
+Financial_datasets_log.csv
+
+# Runtime-generated logs
+prediction_logs/*.csv
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Local backup made during development, not a project file
+*.ipynb.bak
